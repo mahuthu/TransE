@@ -1,0 +1,337 @@
+{
+	"routes": [
+		{
+			"number": "1",
+			"stops": [
+				"Ngong Road",
+				"Citam/NPC Valley road",
+				"The Junction Mall",
+				"Dagoretti"
+			],
+			"busPickupPoints": ["General Post Office/ GPO", "Kencom stage"]
+		},
+		{
+			"number": "6",
+			"stops": [
+				"Eastleigh Area",
+				"Pangani Girls",
+				"Pangani Shopping Centre",
+				"Kariokor Market"
+			],
+			"busPickupPoints": ["Accra Road", "Tom Mboya Street"]
+		},
+		{
+			"number": "7C",
+			"stops": [
+				"Community",
+				"Upper Hill Area",
+				"Kenyatta National Hospital",
+				"Nairobi Hospital",
+				"Doctors Plaza",
+				"Silver Springs hotel",
+				"NTSA",
+				"Equity Center",
+				"TSC",
+				"German Center"
+			],
+			"busPickupPoints": ["Accra Road", "Tom Mboya Street"],
+			"busType": ["Citi Hoppa", "KBS Buses"]
+		},
+		{
+			"number": "8",
+			"stops": [
+				"Ngong road",
+				"Kibera Slums/Kibra",
+				"Adams Arcade",
+				"Toi Market"
+			],
+			"busPickupPoints": ["Railways bus stage"]
+		},
+		{
+			"number": "9",
+			"stops": [
+				"Eastleigh Area",
+				"Ngara Civil Servants Housing Scheme, K.I.E",
+				"Pangani Roundabout",
+				"Fig Tree Trade Center Ngara"
+			],
+			"pickup_point": [
+				"Board the matatu at Tom Mboya Street or opposite Nairobi County Fire Station."
+			],
+			"note": "These matatus use the Ngara Route"
+		},
+		{
+			"number": "11",
+			"stops": ["South B", "Bellevue"],
+			"pickup_point": ["Board the matatu from Railways Bus station"]
+		},
+		{
+			"number": "15",
+			"stops": [
+				"Nyayo Stadium",
+				"Nairobi west &Madaraka (near the road)",
+				"Tuskys T-mall",
+				"Wilson Airport",
+				"Carnivore Simba Sallon",
+				"Uhuru Gardens",
+				"Langata Shopping Centre",
+				"Otiende",
+				"Barracks",
+				"Langata Cemetery (on the lower side)",
+				"Nairobi Safari walk and Nairobi National Park",
+				"Nairobi Animal Orphanage"
+			],
+			"pickup_point": [
+				"Board the matatu from Bus Station main stage or further from the main stage at waiting matatus opp afya center. (the 2nd option is not always available and depends on absence of county askaris)"
+			]
+		},
+		{
+			"number": "14",
+			"stops": [
+				"Langata road upto T-Mall",
+				"Strathmore University",
+				"Nairobi West"
+			],
+			"pickup_point": ["Board Matatu at BS behind Afya Centre"]
+		},
+		{
+			"number": "17B",
+			"stops": [
+				"Thika road",
+				"Thika super highway",
+				"Roysambu",
+				"Kasarani",
+				"Santon",
+				"Mwiki",
+				"St Francis Hospital"
+			],
+			"pickup_point": [
+				"Board the matatu from inside Kenya Bus Station or from outside BS near the St Peter Claviers Catholic Church. For Kasarani, you can also board MSL matatus at Imenti House (along Tom Mboya road)"
+			]
+		},
+		{
+			"number": "23",
+			"stops": [
+				"Kangemi",
+				"Westlands",
+				"Uhuru Highway",
+				"ABC place",
+				"Safaricom House",
+				"Uhuru highway"
+			],
+			"pickup_point": [
+				"Board the Matatu at Odeon cinema / Latema Road off tom Mboya street"
+			]
+		},
+		{
+			"number": "24",
+			"stops": [
+				"Karen Shopping Centre",
+				"Hardy",
+				"all Langata road routes",
+				"Bogani",
+				"Bomas of Kenya",
+				"Galleria Shopping Mall",
+				"Catholic University",
+				"Kenya School of Law",
+				"Nairobi Academy",
+				"Hill Crest International School",
+				"Animal protection",
+				"Co-op bank training centre",
+				"Giraffe Center",
+				"Karen C school"
+			],
+			"pickup_point": [
+				"Kenya Bus Station /BS, Mfangano street, or main buses at Kencom House Moi Avenue"
+			]
+		},
+		{
+			"number": "25",
+			"stops": ["Baba Ndogo", "Thika Road upto GSU flyover"],
+			"pickup_point": ["Board the matatu from Timboroa Lane"]
+		},
+		{
+			"number": "33",
+			"stops": ["Ngumo Estate", "KNH", "Mbagathi", "Masai Market"],
+			"pickup_point": [
+				"Board the matatu from opp St Peter Claviers Catholic church or near OTC /Salvation Army areas"
+			]
+		},
+		{
+			"number": "33",
+			"stops": [
+				"Embakasi route",
+				"Jogoo road",
+				"donholm",
+				"City Stadium",
+				"Pipeline",
+				"Tumaini Estate and Fedha Estate",
+				"Avenue Estate"
+			],
+			"pickup_point": [
+				"Board the matatu at Muthurwa market or along tom mboya street opp National Archives"
+			]
+		},
+		{
+			"number": "34",
+			"stops": [
+				"Langata Area through Mbagathi road",
+				"KNH",
+				"T-mall",
+				"Wilson Airport",
+				"Carnivore",
+				"Langata Shopping Centre"
+			],
+			"pickup_point": [
+				"Board the Matatu from behind St Peters Clavers Church or Opposite OTC"
+			]
+		},
+		{
+			"number": "34 (buses)",
+			"stops": [
+				"JKIA",
+				"Jogoo Road",
+				"Embakasi",
+				"Fedha",
+				"Donholm",
+				"Pipeline",
+				"Utawala",
+				"(Sometimes Mombasa Road)"
+			],
+			"pickup_point": ["Board the bus from Kencom or Ambassador stage"]
+		},
+		{
+			"number": "35/60",
+			"stops": ["Umoja Innercore", "Umoja I and Umoja II"],
+			"pickup_point": [
+				"Board bus at Ronald Ngala Street Mfangano street intersect opp Naivas Supermarket"
+			]
+		},
+		{
+			"number": "44",
+			"stops": [
+				"Kahawa West",
+				"Kamiti Maximum Prison",
+				"Zimmerman",
+				"Githurai 44 Roysambu",
+				"USIU",
+				"Farmers Choice",
+				"Northern Bypass"
+			],
+			"pickup_point": [
+				"Board bus from opposite Posta Ronald Ngala or matatus from Tuskys Beba beba (formerly)"
+			]
+		},
+		{
+			"number": "45",
+			"stops": ["Thika Road", "Thika Superhighway", "Githurai 45"],
+			"pickup_point": [
+				"Board the buses from Nakumatt Ronald Ngala street (formerly) or opp Posta R/ngala"
+			]
+		},
+		{
+			"number": "58",
+			"stops": ["Buru buru"],
+			"pickup_point": ["Board at Tom Mboya Street opp National Archives"]
+		},
+		{
+			"number": "100",
+			"stops": [
+				"Kiambu town",
+				"kiambu road",
+				"Sharks Palace Kiambu road",
+				"CID center",
+				"Ridgeways",
+				"Rock city kiambu road",
+				"Muthaiga roundabout"
+			],
+			"pickup_point": [
+				"Pick the matatu along Ronald Ngala Street all the way to Ring-road Ngara or opp St. peters Claviers Catholic Church"
+			]
+		},
+		{
+			"number": "102",
+			"stops": [
+				"Kikuyu Township",
+				"Dagoretii",
+				"Ngong road",
+				"The junction mall etc"
+			],
+			"pickup_point": ["Board from BS or Kencom"]
+		},
+		{
+			"number": "105",
+			"stops": [
+				"Kikuyu via Uhuru highway",
+				"Westlands",
+				"Kangemi",
+				"Uthiru",
+				"Kinoo"
+			],
+			"pickup_point": [
+				"Board the matatu along tom Mboya Street near National Archives or from Railways bus station"
+			]
+		},
+		{
+			"number": "106",
+			"stops": ["Banana", "Muchatha", "village Market"],
+			"pickup_point": "Koja Mosque stage"
+		},
+		{
+			"number": "110",
+			"stops": ["Kitengela", "mlolongo", "Athi river"],
+			"pickup_point": [
+				"Board from Railways station at the entrance near the railways bus station. Use Metro or Rembo shuttle."
+			]
+		},
+		{
+			"number": "111",
+			"stops": [
+				"Ngong",
+				"Ngong road",
+				"Dagaoretti corner",
+				"(sometimes kiserian,)"
+			],
+			"pickup_point": ["Board from Kencom or Railways bus station."]
+		},
+		{
+			"number": "125/126",
+			"stops": [
+				"Ongata Rongai",
+				"Kiserian",
+				"Bomas of Kenya",
+				"Nazarene University",
+				"Catholic University",
+				"Multimedia University",
+				"Nairobi National Park",
+				"Nairobi National orphanage",
+				"Safari walk",
+				"Langata Barracks",
+				"Galleria",
+				"Brookhouse International School",
+				"Langata hospital",
+				"Langata Police Station",
+				"Langata Cemetery"
+			],
+			"pickup_point": ["Board from Railways bus station"]
+		},
+		{
+			"number": "146",
+			"stops": [
+				"Ruiru",
+				"Thika Road",
+				"Kahawa Wendani",
+				"Kahawa Barracks",
+				"Kahawa Sukari",
+				"Kenyatta University",
+				"Ruiru Bypass"
+			],
+			"pickup_point": ["Board from Mumbi Lane off Ronald Ngala Street"]
+		},
+		{
+			"number": "237",
+			"stops": ["Thika town", "all routes on Thika Road", "Kahawa Ruiru"],
+			"pickup_point": "..."
+		}
+	]
+}

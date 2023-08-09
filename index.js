@@ -3,15 +3,17 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-
-// const userName = "sandbox";
-// const apiKey =
-// 	"0941db90be408072b1e42740c20badc656fbcdd771bf4a79678e1d3be18c8d88";
-// const AT = require("africastalking");
-// const africastalking = AT({
-// 	apiKey: process.env.AT_API_KEY,
-// 	username: process.env.AT_USERNAME,
-// });
+const AfricasTalking = require("africastalking")({
+	apiKey: process.env.AT_API_KEY,
+	username: process.env.AT_USERNAME,
+});
+const {
+	// getDestinations,
+	isStopFound,
+	getBusPickupPoints,
+	getRouteNumbers,
+	// filterDestinations,
+} = require("./functions");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
@@ -26,7 +28,19 @@ app.get("/", (req, res) => {
 	res.send("Hello World!");
 });
 
-let county, region, currentLocation, destination, distance, message, price;
+let county,
+	region,
+	currentLocation,
+	destination,
+	distance,
+	message,
+	price,
+	routeNumber,
+	busPickupPoints;
+
+app.get("/api/routes", (req, res) => {
+	res.send(routeData);
+});
 app.post("/api/ussd", (req, res) => {
 	menu.startState({
 		run: () => {
@@ -79,22 +93,54 @@ app.post("/api/ussd", (req, res) => {
 	});
 
 	menu.state("cbd.destination", {
-		run: () => {
+		run: async () => {
+			// Make the function asynchronous
 			distance = 10;
 			price = distance * 20;
 			destination = menu.val;
-			const currentLocation = region;
-			message = `You are coming from ${currentLocation} and going to ${destination}
-        Route: via Ngong Road
-        Estimated Time: 30 mins
-        Estimated Distance: ${distance} km
-        Estimated Price: KES ${price}
-        
-        Go to Kilimani Bus Station take Metro Sacco to South C Main Stage\n`;
-			menu.end(
-				// "Thank you. Your request has been received. You will receive a route breakdown shortly."
-				message
-			);
+
+			if (destination != undefined) {
+				const currentLocation = region;
+				const to = menu.args.phoneNumber;
+
+				if (isStopFound(destination)) {
+					try {
+						// routeNumber = ;
+						// busPickupPoints = ;
+						// const busPickupPoints = await getBusPickupPoints(destination);
+						// const routeNumber = await getRouteNumbers(destination);
+
+						const message = `You are coming from ${currentLocation} and going to ${destination} 
+            Route Numbers: ${await getRouteNumbers(destination)}
+            Estimated Time: 30 mins
+            Estimated Distance: ${distance} km
+            Estimated Price: KES ${price}
+            Go to ${await getBusPickupPoints(destination)}\n`;
+						const otherMsg = "this is just a test";
+						menu.end(message);
+						await sendSMS(otherMsg, to);
+						if (
+							currentLocation != undefined &&
+							destination != undefined &&
+							distance != undefined &&
+							price != undefined &&
+							message != undefined &&
+							to != undefined
+						) {
+							await sendSMS(message, to);
+						}
+					} catch (error) {
+						console.error("Error fetching data:", error);
+						menu.end(
+							"An error occurred while fetching data. Please try again later."
+						);
+					}
+				} else {
+					menu.end(
+						"We could not find the destination in our database. Please try again later."
+					);
+				}
+			}
 		},
 	});
 
@@ -111,34 +157,31 @@ app.post("/api/ussd", (req, res) => {
 	});
 
 	menu.run(req.body, (ussdResult) => {
-		console.log("destination is ", destination);
-
-		const to = menu.args.phoneNumber;
-
-		// if (currentLocation != undefined || destination != undefined) {
-		// 	sendSMS(message, to);
-		// }
+		if (destination != undefined) console.log("destination is ", destination);
 
 		res.send(ussdResult);
 	});
 });
 
-// const sendSMS = async (txt, destinator) => {
+const sendSMS = async (txt, destinator) => {
+	// console.log("destination is ", destinator);
+	// console.log("txt is ", txt);
+	// console.log("api key", process.env.AT_API_KEY);
+	// console.log("username", process.env.AT_USERNAME);
 
-// 	const to = destinator;
+	// const africastalking = AT({
+	// 	apiKey: process.env.AT_API_KEY,
+	// 	username: process.env.AT_USERNAME,
+	// });
 
-// 	try {
-// 		const response = await africastalking.SMS.send({
-// 			to,
-// 			message,
-// 		});
-
-// 		console.log(response);
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
-app.post("/api/ussd/events", (req, res) => {
-	console.log(req.body);
-	res.send("Events: " + req.body);
-});
+	await AfricasTalking.SMS.send({
+		to: destinator,
+		message: txt,
+	}).catch((err) => {
+		console.log(err);
+	});
+};
+// app.post("/api/ussd/events", (req, res) => {
+// 	// console.log(req.body.data);
+// 	res.send("Events: " + req.body.data);
+// });
